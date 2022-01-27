@@ -5,7 +5,7 @@ import { addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve,
 
 const { test, skip } = QUnit;
 
-test('this test should pass', (expect) => {
+test('test addExclamationPoints', (expect) => {
     const actual = addExclamationPoints('bunny rabbit');
     const expected = 'bunny rabbit!!!';
 
@@ -15,9 +15,9 @@ test('this test should pass', (expect) => {
     const actual3 = addExclamationPoints('$');
     const expected3 = '$!!!';
 
-    expect.equal(actual, expected);
-    expect.equal(actual2, expected2);
-    expect.equal(actual3, expected3);
+    expect.equal(actual, expected, 'test if function returns "bunny rabbit!!!');
+    expect.equal(actual2, expected2, 'test if function returns "!!!');
+    expect.equal(actual3, expected3, 'test if function returns "$!!!');
 });
 
 
@@ -29,7 +29,7 @@ skip('this test should be skipped', (expect) => {
     expect.equal(actual, expected);
 });
 
-test('this test should pass', (expect) => {
+test('test multiplyBySeven', (expect) => {
     const actual = multiplyBySeven(4);
     const expected = 28;
 
@@ -39,12 +39,12 @@ test('this test should pass', (expect) => {
     const actual3 = multiplyBySeven(0);
     const expected3 = 0;
 
-    expect.equal(actual, expected);
-    expect.equal(actual2, expected2);
-    expect.equal(actual3, expected3);
+    expect.equal(actual, expected, 'checks if number was multiplied by 7');
+    expect.equal(actual2, expected2, 'checks if number was multiplied by 7');
+    expect.equal(actual3, expected3, 'checks if number was multiplied by 7');
 });
 
-test('this test should pass', (expect) => {
+test('test multiplyBySeven', (expect) => {
     const actual = multiplyBy12ThenHalve(4);
     const expected = 24;
 
@@ -154,4 +154,5 @@ test('this test should pass', (expect) => {
 
     expect.ok(typeof(actual) === 'number');
     expect.ok((actual >= 0) && (actual <= 5)); 
+    
 });
