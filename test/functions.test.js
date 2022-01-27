@@ -1,5 +1,7 @@
 // IMPORT MODULES under test here:
-import { addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray } from '../functions.js';
+import { addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, 
+    divideThenMultiply, returnAsAnArray, returnAsAString,
+    makeLuckyGreeting, getSecondItem } from '../functions.js';
 
 const { test, skip } = QUnit;
 
@@ -84,4 +86,49 @@ test('this test should pass', (expect) => {
     expect.deepEqual(actual, expected);
     expect.deepEqual(actual2, expected2);
     expect.deepEqual(actual3, expected3);
+});
+
+test('this test should pass', (expect) => {
+    const actual = returnAsAString(8, 4, 5);
+    const expected = '845';
+
+    const actual2 = returnAsAString(10, 5, 10);
+    const expected2 = '10510';
+
+    const actual3 = returnAsAString(3, 3, 0);
+    const expected3 = '330';
+
+    expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
+    expect.equal(actual3, expected3);
+});
+
+test('this test should pass', (expect) => {
+    const actual = makeLuckyGreeting(8, 4);
+    const expected = 'Hello! Your lucky number for the day is 12.';
+
+    const actual2 = makeLuckyGreeting(10, 5);
+    const expected2 = 'Hello! Your lucky number for the day is 15.';
+
+    const actual3 = makeLuckyGreeting(3, 3);
+    const expected3 = 'Hello! Your lucky number for the day is 6.';
+
+    expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
+    expect.equal(actual3, expected3);
+});
+
+test('this test should pass', (expect) => {
+    const actual = getSecondItem([1, 2, 3]);
+    const expected = 2;
+
+    const actual2 = getSecondItem(['bogus', 'input', 'string']);
+    const expected2 = 'input';
+
+    const actual3 = getSecondItem(['red', 'green', 'yellow', 'blue']);
+    const expected3 = 'green';
+
+    expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
+    expect.equal(actual3, expected3);
 });
