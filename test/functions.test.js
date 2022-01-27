@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, 
-    divideThenMultiply, returnAsAnArray, returnAsAString,
-    makeLuckyGreeting, getSecondItem } from '../functions.js';
+    divideThenMultiply, returnAsAnArray, returnAsAString, getRandomNumber {
+    makeLuckyGreeting, getSecondItem, getLastItem , } from '../functions.js';
 
 const { test, skip } = QUnit;
 
@@ -127,6 +127,36 @@ test('this test should pass', (expect) => {
 
     const actual3 = getSecondItem(['red', 'green', 'yellow', 'blue']);
     const expected3 = 'green';
+
+    expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
+    expect.equal(actual3, expected3);
+});
+
+  
+test('this test should pass', (expect) => {
+    const actual = getLastItem([1, 2, 3]);
+    const expected = 3;
+
+    const actual2 = getLastItem(['bogus', 'input', 'string']);
+    const expected2 = 'string';
+
+    const actual3 = getLastItem(['red', 'green', 'yellow', 'blue']);
+    const expected3 = 'blue';
+
+    expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
+    expect.equal(actual3, expected3);
+});
+test('this test should pass', (expect) => {
+    const actual = getRandomNumber(8, 4,);
+    const expected = '845';
+
+    const actual2 = getRandomNumber(10, 5, 10);
+    const expected2 = '10510';
+
+    const actual3 = getRandomNumber(3, 3, 0);
+    const expected3 = '330';
 
     expect.equal(actual, expected);
     expect.equal(actual2, expected2);
